@@ -1,0 +1,84 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <title>
+            VidGames History Form
+        </title>           
+    </head>
+<!-- solving HTML exercise 2 mainley exr 2&4 but some apllcations of exr 3 are here aswell-->
+<!--[html_2-exercise_2&3]-->
+    <Body>
+        <header>
+            <h1 style="text-align: center;">
+                Game suggestion form
+            </h1>
+        </header>
+        <section>
+
+         
+        <form action="thankYou.html" autocomplete="on">
+            <input type="hidden" name="val" value="deitel@deitel.com">
+            <p>Game name:
+                <label>
+                    
+                    <input type="text" name="name" size="20" maxlength="25" placeholder="Enter game name">
+                </label>
+                
+            </p>
+            <p> Your email:
+                <label>
+                    <input type="email" size="20" maxlength="25" placeholder="Enter your email">
+                </label>
+            </p>
+            <p>
+                Why do you think we should add it?
+            </p>
+            <p><label> 
+                <textarea rows="4" cols="36" placeholder="Enter your thought here"></textarea><br />
+            </label></p>
+             
+                <label for="rate">
+                    What do you rate the game?
+                </label>
+                <input list="rate list" id="myRate list" name="rate" size="20" maxlength="25" placeholder="choose a rate">
+                <datalist id="rate list">
+                    <option value="Perfect"></option>
+                    <option value="Great"></option>
+                    <option value="Average"></option>
+                    <option value="Poor"></option>
+                    <option value="Unplayable"></option>
+                </datalist>
+            <p>
+                Is there any suggestion about the game?
+            </p>
+            <p>
+                <label>
+                    <textarea rows="4" cols="36" placeholder="Enter your suggestion"></textarea><br />
+                </label>
+            </p>
+            <p>
+                Why do you love/hate the game?
+            </p>
+            <p>
+                <label>
+                    <textarea rows="4" cols="36" placeholder="Enter your reasons"></textarea><br />
+                </label>
+            </p>
+            <p>
+                Who do you recommend to play it and why?
+            </p>
+            <p>
+                <label>
+                    <textarea rows="4" cols="36" placeholder="Enter your recommendation"></textarea><br />
+                </label>
+            </p>
+
+            <p>
+                <input type="submit" value="submit">
+                <input type="reset" value="reset">
+            </p>
+        </section> 
+        </form>
+        
+    </Body>
+</html>
