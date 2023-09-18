@@ -1,4 +1,76 @@
 /*[css_1-exercise_1] */
 body{
-    background-color: black;
+    background: #040D17;
+}
+/*[css_2-exercise_2&3] */
+header{
+    text-transform: uppercase;
+}
+nav a{
+   color: green; 
+   inline-size: auto;
+}
+.top{
+    background-color: red;
+    color: #00EEBD;
+}
+
+em{
+    background-color: blue;
+}
+#the_most_important{
+    background-color: gold;
+    text-transform: uppercase;
+}
+h3{
+    font-family: sans-serif;
+}
+h1,h2,h3,h4,h5,h6{
+    text-transform: uppercase;
+    color: #FFF;
+font-family: Oxanium;
+font-size: 24px;
+font-style: normal;
+font-weight: 700;
+line-height: normal;
+}
+
+.afterH3::first-letter{
+    font-size: x-large;
+}
+table:hover{
+    background-color: lightblue;
+    .top{
+        background-color: lightblue;
+    color: #040D17;
+
+    }
+}
+p:hover{
+    color: blueviolet;
+}
+input{
+    padding: 20px;
+}
+p{
+    color: var(--Body-text-c-1, #F5F5F5);
+font-family: Inter;
+font-size: 16px;
+font-style: normal;
+font-weight: 400;
+line-height: 175%;
+    
+}
+#special{
+    color: #00EEBD;
+font-family: Oxanium;
+}
+input[type="text"]{
+    border-color: lightgreen;
+}
+input[name="submit"]{
+    padding: 50px;
+}
+.imageLinks:hover{
+    cursor: pointer;
 }

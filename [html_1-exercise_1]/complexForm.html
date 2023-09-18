@@ -3,13 +3,14 @@
     <head>
         <title>
             VidGames History Form
-        </title>           
+        </title>  
+        <link rel="stylesheet" href="style.css">         
     </head>
 <!-- solving HTML exercise 2 mainley exr 2&4 but some apllcations of exr 3 are here aswell-->
 <!--[html_2-exercise_2&3]-->
     <Body>
         <header>
-            <h1 style="text-align: center;">
+            <h1 style="text-align: center; color: aliceblue;">
                 Game suggestion form
             </h1>
         </header>
@@ -38,9 +39,12 @@
             </label></p>
              
                 <label for="rate">
-                    What do you rate the game?
+                    <p>
+                        What do you rate the game?
+                    </p>
+                    
                 </label>
-                <input list="rate list" id="myRate list" name="rate" size="20" maxlength="25" placeholder="choose a rate">
+                <input list="rate list" id="myRate list" name="rate" size="20" maxlength="25" placeholder="choose a rate" >
                 <datalist id="rate list">
                     <option value="Perfect"></option>
                     <option value="Great"></option>
@@ -74,8 +78,10 @@
             </p>
 
             <p>
-                <input type="submit" value="submit">
+                <input type="submit" value="submit" name="submit">
                 <input type="reset" value="reset">
+                <input type="text" placeholder="Final message(optional)" name="textInput">
+                
             </p>
         </section> 
         </form>
