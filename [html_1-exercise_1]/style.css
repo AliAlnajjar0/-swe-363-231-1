@@ -2,6 +2,7 @@
 body{
     background: #040D17;
 }
+
 /*[css_2-exercise_2&3] */
 header{
     text-transform: uppercase;
@@ -52,6 +53,7 @@ p:hover{
 input{
     padding: 20px;
 }
+/*[css_3-exercise_1&3&4] */
 p{
     color: var(--Body-text-c-1, #F5F5F5);
 font-family: Inter;
@@ -73,4 +75,111 @@ input[name="submit"]{
 }
 .imageLinks:hover{
     cursor: pointer;
+}
+#loadingBar{
+    
+    top: 35px; 
+    left: 450px; 
+    position: relative;
+    animation-name: loadingAnime ;
+    animation-duration: 2s;
+
+}
+@keyframes loadingAnime {
+    from {width: 0%;}
+    to {width: 500px;}
+  }
+  .progress-text{
+    font-weight: bold;
+    margin-top: 5px;
+    position: relative;
+  }
+  .progress-text::before{
+    content: counter(count) "%";
+    animation: counter 2s linear alternate forwards;
+    position: absolute;
+    left: 50%;
+    transform: translateX(-50%);
+    
+  }
+  @keyframes counter {
+    0% {
+      counter-increment: count 0;
+    }
+    10% {
+      counter-increment: count 10;
+    }
+    20% {
+      counter-increment: count 20;
+    }
+    30% {
+      counter-increment: count 30;
+    }
+    40% {
+      counter-increment: count 40;
+    }
+    50% {
+      counter-increment: count 50;
+    }
+    60% {
+      counter-increment: count 60;
+    }
+    70% {
+      counter-increment: count 70;
+    }
+    80% {
+      counter-increment: count 80;
+    }
+    90% {
+      counter-increment: count 90;
+    }
+    100% {
+      counter-increment: count 100;
+    }
+  }
+  #loadingButton{
+    background-color: #000;
+    border: #000;
+    top: 45px;
+    left: 650px;
+    position: relative;
+    height: 70%;
+    width: 10%;
+    animation: showButton 5s   forwards;
+  }
+  @keyframes showButton {
+    to{
+        background-color: #00EEBD;
+        
+    }
+}
+#lodingHeader{
+    text-align: center;
+}
+body:hover{
+ background-color: rgb(24, 17, 72);
+ transition: 5s; 
+}
+.AP{
+  font-family: 'Noto Kufi Arabic', sans-serif;
+}
+.mainImg{
+margin: 15px;
+border-radius: 10px 10px 0px 0px;
+
+}
+.humElment{
+  opacity: 1;
+  transition: opacity 0.3s;
+    
+}
+.hum:hover{
+  cursor: pointer;
+}
+.hum:checked {
+  .humElment p{
+    opacity: 1;
+    color: white;
+  }
+    
 }
