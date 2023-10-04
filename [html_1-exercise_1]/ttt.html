@@ -1,0 +1,459 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+        body {
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            justify-content: center;
+            height: 100vh;
+        }
+
+        .cell {
+            font-family: sans-serif;
+            font-size: larger;
+            font-weight: bolder;
+            background-color: beige;
+            width: 100px;
+            height: 100px;
+            border: 1px solid black;
+            text-align: center;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+        }
+
+        .cell:hover {
+            background-color: blanchedalmond;
+        }
+
+        .row {
+            display: flex;
+        }
+        #dRow:hover{
+            cursor: pointer;
+        }
+    </style>
+</head>
+
+<body>
+    <h1 id="turn">
+        Now it's is <span>X</span> turn
+    </h1>
+    <!-- Board -->
+    <div class="board">
+        <div class="row">
+            <div class="cell" id="1"></div>
+            <div class="cell" id="2"></div>
+            <div class="cell" id="3"></div>
+        </div>
+        <div class="row">
+            <div class="cell" id="4"></div>
+            <div class="cell" id="5"></div>
+            <div class="cell" id="6"></div>
+        </div>
+        <div class="row">
+            <div class="cell" id="7"></div>
+            <div class="cell" id="8"></div>
+            <div class="cell" id="9"></div>
+        </div>
+        
+        <input value="Reset" type="button" id="reset" style="width: 100px; height: 50px; margin: 20px; left: 85px; position: relative; display: none;">
+        <script>
+
+            // decided which turn is it
+            let turn = "X"
+            let gameEnded = false
+
+            // when we click on a cell add the letter 
+            let board = document.getElementsByClassName("board")[0]
+            board.addEventListener("click", cellClicked)
+            let counter = 0
+            let resetButton = document.getElementById("reset")
+            resetButton.addEventListener("click", resetGame)
+            let row1 = document.getElementsByClassName("row1")
+            let xCount = []
+            let OCount = []
+            var isDRowActive =true
+            var isDRowActiveO =true
+            let isShowX = true
+            let isShowO = true
+
+
+            let cell1 = document.getElementById("1")
+            let cell2 = document.getElementById("2")
+            let cell3 = document.getElementById("3")
+            let cell4 = document.getElementById("4")
+            let cell5 = document.getElementById("5")
+            let cell6 = document.getElementById("6")
+            let cell7 = document.getElementById("7")
+            let cell8 = document.getElementById("8")
+            let cell9 = document.getElementById("9")
+
+            function cellClicked(event) {
+                let cell = event.target
+                if (gameEnded) {
+
+                   document.getElementById("turn").innerText = "The game is Over my guy :)"
+
+} 
+                else if(!isDRowActive || !isDRowActiveO){
+
+                    if(!isDRowActive){
+                            dRow.style.display = "none"
+                            isShowX = false
+                            isDRowActive = true
+                        }
+                        else {
+                            dRowO.style.display = "none"
+                            isShowO = false
+                            isDRowActiveO = true
+                        }
+
+                    if(cell.id == "1" || cell.id == "2" || cell.id == "3"){
+
+                        if(cell1.innerText == "X" || cell1.innerText == "O"){
+                            counter = counter -1
+                            if(cell1.innerText == "X"){
+
+                                xCount.splice(xCount.indexOf("1"),1 )
+                            }
+                            else{
+                                OCount.splice(OCount.indexOf("1"),1 )
+                            }
+                        }
+                        if(cell2.innerText == "X" || cell2.innerText == "O"){
+                            counter = counter -1
+                            if(cell2.innerText == "X"){
+
+                                xCount.splice(xCount.indexOf("2"),1 )
+                                }
+                                else{
+                                OCount.splice(OCount.indexOf("2"),1 )
+                                }
+                        }
+                        if(cell3.innerText == "X" || cell3.innerText == "O"){
+                            counter = counter -1
+                            if(cell3.innerText == "X"){
+
+                                xCount.splice(xCount.indexOf("3"),1 )
+                                }
+                                else{
+                                OCount.splice(OCount.indexOf("3"),1 )
+                                }
+                        }
+                        cell1.innerText = ""
+                        cell2.innerText= ""
+                        cell3.innerText= ""
+                        cell1.style.backgroundColor = "beige"
+                        cell2.style.backgroundColor = "beige"
+                        cell3.style.backgroundColor = "beige"
+                        
+                        
+                    }
+                    else if(cell.id == "4" || cell.id == "5" || cell.id == "6"){
+
+                        if(cell4.innerText == "X" || cell4.innerText == "O"){
+                            counter = counter -1
+                            if(cell4.innerText == "X"){
+
+                                xCount.splice(xCount.indexOf("4"),1 )
+                                }
+                                else{
+                                OCount.splice(OCount.indexOf("4"),1 )
+                                }
+                        }
+                        if(cell5.innerText == "X" || cell5.innerText == "O"){
+                            counter = counter -1
+                            if(cell5.innerText == "X"){
+
+                                xCount.splice(xCount.indexOf("5"),1 )
+                                }
+                                else{
+                                OCount.splice(OCount.indexOf("5"),1 )
+                                }
+                        }
+                        if(cell6.innerText == "X" || cell6.innerText == "O"){
+                            counter = counter -1
+                            if(cell6.innerText == "X"){
+
+                                xCount.splice(xCount.indexOf("6"),1 )
+                                }
+                                else{
+                                OCount.splice(OCount.indexOf("6"),1 )
+                                }
+                        }
+                        cell4.innerText = ""
+                        cell5.innerText= ""
+                        cell6.innerText= ""
+                        cell4.style.backgroundColor = "beige"
+                        cell5.style.backgroundColor = "beige"
+                        cell6.style.backgroundColor = "beige"
+                       
+
+                        
+                    }
+                    else{
+
+                        if(cell7.innerText == "X" || cell7.innerText == "O"){
+                            counter = counter -1
+                            if(cell7.innerText == "X"){
+
+                            xCount.splice(xCount.indexOf("7"),1 )
+                            }
+                            else{
+                            OCount.splice(OCount.indexOf("7"),1 )
+                            }
+                        }
+                        if(cell8.innerText == "X" || cell8.innerText == "O"){
+                            counter = counter -1
+                            if(cell8.innerText == "X"){
+
+                                xCount.splice(xCount.indexOf("8"),1 )
+                                }
+                                else{
+                                OCount.splice(OCount.indexOf("8"),1 )
+                            }
+                        }
+                        if(cell9.innerText == "X" || cell9.innerText == "O"){
+                            counter = counter -1
+                            if(cell9.innerText == "X"){
+
+                                xCount.splice(xCount.indexOf("9"),1 )
+                                }
+                                else{
+                                OCount.splice(OCount.indexOf("9"),1 )
+                            }
+                        }
+                        cell7.innerText = ""
+                        cell8.innerText= ""
+                        cell9.innerText= ""
+                        cell7.style.backgroundColor = "beige"
+                        cell8.style.backgroundColor = "beige"
+                        cell9.style.backgroundColor = "beige"
+                        
+
+
+                        }
+                        turn = turn === "X" ? "O" : "X"
+                        turnLetter = document.querySelector("#turn span")
+                        turnLetter.innerText = turn
+                        
+                }
+               else  if(cell.innerText == "X" || cell.innerText=="O"){
+                    
+                } 
+                else{
+
+                    cell.innerText = turn
+                    cell.style.backgroundColor= "lightblue"
+                    counter = counter + 1
+
+                    if(cell.innerText == "X"){
+                        xCount.push(cell.id)
+                    }else{
+                        OCount.push(cell.id)
+                    }
+
+                    if(xCount.includes("1") && xCount.includes("2") && xCount.includes("3")){
+
+                    cell1.style.backgroundColor =  "blueviolet"  
+                    cell2.style.backgroundColor =  "blueviolet"  
+                    cell3.style.backgroundColor =  "blueviolet"  
+                    killGame("X")
+
+                 } else if(xCount.includes("4") && xCount.includes("5") && xCount.includes("6")){
+
+                    cell4.style.backgroundColor =  "blueviolet"  
+                    cell5.style.backgroundColor =  "blueviolet"  
+                    cell6.style.backgroundColor =  "blueviolet"
+                    killGame("X")
+                 }
+                 else if(xCount.includes("7") && xCount.includes("8") && xCount.includes("9")){
+
+                    cell7.style.backgroundColor =  "blueviolet"  
+                    cell8.style.backgroundColor =  "blueviolet"  
+                    cell9.style.backgroundColor =  "blueviolet"
+                    killGame("X")
+                 }
+                 else if(xCount.includes("1") && xCount.includes("4") && xCount.includes("7")){
+
+                    cell1.style.backgroundColor =  "blueviolet"  
+                    cell4.style.backgroundColor =  "blueviolet"  
+                    cell7.style.backgroundColor =  "blueviolet"
+                    killGame("X")
+                 }
+                 else if(xCount.includes("2") && xCount.includes("5") && xCount.includes("8")){
+
+                    cell2.style.backgroundColor =  "blueviolet"  
+                    cell5.style.backgroundColor =  "blueviolet"  
+                    cell8.style.backgroundColor =  "blueviolet"
+                    killGame("X")
+                 }
+                 else if(xCount.includes("3") && xCount.includes("6") && xCount.includes("9")){
+
+                    cell3.style.backgroundColor =  "blueviolet"  
+                    cell6.style.backgroundColor =  "blueviolet"  
+                    cell9.style.backgroundColor =  "blueviolet"
+                    killGame("X")
+                 }
+                 else if(xCount.includes("1") && xCount.includes("5") && xCount.includes("9")){
+
+                    cell1.style.backgroundColor =  "blueviolet"  
+                    cell5.style.backgroundColor =  "blueviolet"  
+                    cell9.style.backgroundColor =  "blueviolet"
+                    killGame("X")   
+                 }
+                 else if(xCount.includes("3") && xCount.includes("5") && xCount.includes("7")){
+
+                    cell3.style.backgroundColor =  "blueviolet"  
+                    cell5.style.backgroundColor =  "blueviolet"  
+                    cell7.style.backgroundColor =  "blueviolet"
+                    killGame("X")
+                }
+                else if (OCount.includes("1") && OCount.includes("2") && OCount.includes("3")){
+
+                    cell1.style.backgroundColor =  "blueviolet"  
+                    cell2.style.backgroundColor =  "blueviolet"  
+                    cell3.style.backgroundColor =  "blueviolet"
+                    killGame("O")
+
+                } 
+                else if(OCount.includes("4") && OCount.includes("5") && OCount.includes("6")){
+
+                    cell4.style.backgroundColor =  "blueviolet"  
+                    cell5.style.backgroundColor =  "blueviolet"  
+                    cell6.style.backgroundColor =  "blueviolet"
+                    killGame("O")
+                }
+                else if(OCount.includes("7") && OCount.includes("8") && OCount.includes("9")){
+
+                    cell7.style.backgroundColor =  "blueviolet"  
+                    cell8.style.backgroundColor =  "blueviolet"  
+                    cell9.style.backgroundColor =  "blueviolet"
+                    killGame("O")
+                }
+                else if(OCount.includes("1") && OCount.includes("4") && OCount.includes("7")){
+
+                    cell1.style.backgroundColor =  "blueviolet"  
+                    cell4.style.backgroundColor =  "blueviolet"  
+                    cell7.style.backgroundColor =  "blueviolet"
+                    killGame("O")
+                }
+                else if(OCount.includes("2") && OCount.includes("5") && OCount.includes("8")){
+ 
+                    cell2.style.backgroundColor =  "blueviolet"  
+                    cell5.style.backgroundColor =  "blueviolet"  
+                    cell8.style.backgroundColor =  "blueviolet"
+                    killGame("O")
+                }
+                else if(OCount.includes("3") && OCount.includes("6") && OCount.includes("9")){
+
+                    cell3.style.backgroundColor =  "blueviolet"  
+                    cell6.style.backgroundColor =  "blueviolet"  
+                    cell9.style.backgroundColor =  "blueviolet"
+                    killGame("O")
+                }
+                else if(OCount.includes("1") && OCount.includes("5") && OCount.includes("9")){
+
+                    cell1.style.backgroundColor =  "blueviolet"  
+                    cell5.style.backgroundColor =  "blueviolet"  
+                    cell9.style.backgroundColor =  "blueviolet"
+                    killGame("O")   
+                }
+                else if(OCount.includes("3") && OCount.includes("5") && OCount.includes("7")){
+
+                    cell3.style.backgroundColor =  "blueviolet"  
+                    cell5.style.backgroundColor =  "blueviolet"  
+                    cell7.style.backgroundColor =  "blueviolet"
+                    killGame("O")
+                }
+
+                  else if (counter == 9) {
+                    
+                    document.getElementById("turn").innerText = "Draw"
+                    resetButton.style.display = "block"
+                    gameEnded = true
+                 }
+
+                  else {
+                    // change turn
+                    turn = turn === "X" ? "O" : "X"
+
+                    //change title
+                    turnLetter = document.querySelector("#turn span")
+                    turnLetter.innerText = turn
+                  }
+
+                  if(turn == "X"){
+                    dRowO.style.display = "none"
+                    if(isShowX){
+                        dRow.style.display = "block"
+                    }
+                }else{
+                    dRow.style.display = "none"
+                    if(isShowO){
+                        dRowO.style.display = "block"
+                    }
+                 }
+                }
+
+                
+                
+                
+            }
+            function resetGame(event){
+                location.reload(); 
+            }
+            function killGame(event){
+                document.getElementById("turn").innerText = event +" is the Winner!!"
+                resetButton.style.display = "block"
+                gameEnded = true
+            }
+        </script>
+    </div>
+
+    <div class="applites">
+        <img src="dRow.png" alt="Dleat row" style="height: 40px; margin: 10px;" id="dRow" >
+        <img src="dRow.png" alt="Dleat row" style="height: 40px; margin: 10px; display: none;" id="dRowO" >
+
+       <!--2<div id="dRowText" style="left: 40px; position: relative; display: none  ;">
+            Delaet a full row
+        </div> --> 
+    </div>
+    
+    <script>
+        
+        var dRow = document.getElementById("dRow")
+        dRow.addEventListener("click",dRowClicked)
+        var dRowO = document.getElementById("dRowO")
+        dRowO.addEventListener("click",dRowClickedO)
+       /* let dRowText = document.getElementById("dRowText")
+        dRow.onmouseenter = function(){
+            dRowText.style.display = "block"
+        }
+        dRow.onmouseleave = function(){
+            dRowText.style.display = "none"
+        }
+       */
+
+       function dRowClicked(event){
+            isDRowActive = false
+        
+         //dRow.style.opacity = 0.7
+       }
+       function dRowClickedO(event){
+        isDRowActiveO = false
+        console.log("working")
+       }
+       
+    </script>
+    
+</body>
+
+</html>
