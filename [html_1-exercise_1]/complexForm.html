@@ -76,15 +76,63 @@
                     <textarea rows="4" cols="36" placeholder="Enter your recommendation"></textarea><br />
                 </label>
             </p>
-
+            <div>
+                <p>Sign here please.</p>
+                <canvas class="myCanvas">
+                    <p>Sign here please.</p> 
+                </canvas>
+            </div>
+            
             <p>
                 <input type="submit" value="submit" name="submit">
                 <input type="reset" value="reset">
                 <input type="text" placeholder="Final message(optional)" name="textInput">
                 
+                
             </p>
         </section> 
         </form>
+
+        <script>
+            // js 3 exersie 2 [js_3-exercise_2]
+            const canvas = document.querySelector('.myCanvas');
+            const ctx = canvas.getContext('2d');
+            ctx.fillStyle = 'rgb(255,255,255)';
+            ctx.fillRect(0, 0, 500, 500);
+
+            function degToRad(degrees) {
+            return degrees * Math.PI / 180;
+            };
+
+            let curX;
+            let curY;
+            let pressed = false;
+
+            document.addEventListener('mousemove', e => {
+            const rect = canvas.getBoundingClientRect();
+            curX = e.clientX - rect.left;
+            curY = e.clientY - rect.top;
+            })
+
+            canvas.addEventListener('mousedown', () => pressed = true);
+            canvas.addEventListener('mouseup', () => pressed = false);
+
+
+            function draw() {
+                ctx.fillStyle = "rgb(0,0,0)";
+            
+                if (pressed){
+                    ctx.beginPath();
+                    ctx.arc(curX, curY, 4, 0, degToRad(360), false);
+                    ctx.fill();
+                    }
+
+                requestAnimationFrame(draw);
+             }
+
+            draw();
+
+        </script>
         
     </Body>
 </html>
