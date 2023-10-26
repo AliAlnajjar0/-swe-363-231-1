@@ -36,9 +36,9 @@
 
         <p style="text-align: center;">
             <a href="dark3.html"  class="imageLinks">
-                <img src="Dark-Souls-IIIjpg.jpg" alt="Dark-Souls-III" height="330" width="200" style="border: 0cap;" class="mainImg">
+                <img src="Dark-Souls-IIIjpg.jpg" alt="Dark-Souls-III" height="330" width="200" style="border: 0cap;" class="mainImg" id="dark">
             </a>
-            <img src="Undertale.jpeg" alt="Undertale" height="330" width="200" style="border: 0cap;"class="mainImg">
+            <img src="Undertale.jpeg" alt="Undertale" height="330" width="200" style="border: 0cap;"class="mainImg" id="under">
         </p>
 
         <!--[html_2-exercise_4]-->
@@ -97,6 +97,24 @@
       jkArea.innerText = json.setup + "\n"+json.delivery
       console.log(json)
       
+    }
+
+    // js 4 exersie 1 [js_4-exercise_1]
+
+    function GameImg(id){
+        this.id = id
+        const img = document.getElementById(id)
+        
+    }
+
+    let gameImg = [
+        new GameImg("dark"),
+        new GameImg("under")
+    ]
+    let index = 0;
+    while (index < gameImg.length) {
+    console.log(gameImg[index])
+    index++;
     }
         </script>
         
