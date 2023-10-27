@@ -83,12 +83,13 @@
         // js 3 exersie 1 [js_3-exercise_1]
         let jkArea = document.getElementById("jkText")
         let jkButton = document.getElementById("jkButton")
-        jkButton.addEventListener("click", loadJock )
-        async function loadJock(img) {
+
+         // js 4 exersie 2.1 [js_4-exercise_2.1]
+        const loadJock = async function loadJock(img) {
       res = await fetch("https://v2.jokeapi.dev/joke/Any?format=json")
       json = await res.json()
       json.flags.nsfw = false
-      json.flags.political = false
+      json.flags.political = false      
       json.flags.racist = false
       json.flags.religious = false
       json.flags.sexist = false
@@ -96,14 +97,22 @@
       json.category = "Programming"
       jkArea.innerText = json.setup + "\n"+json.delivery
       console.log(json)
-      
+        
+  
     }
+    jkButton.addEventListener("click", loadJock )
 
     // js 4 exersie 1 [js_4-exercise_1]
 
-    function GameImg(id){
-        this.id = id
-        const img = document.getElementById(id)
+    class GameImg{
+        constructor(id){
+            this.id = id
+        }
+        
+        showId(){
+            return this.id
+        }
+        
         
     }
 
@@ -114,8 +123,18 @@
     let index = 0;
     while (index < gameImg.length) {
     console.log(gameImg[index])
+    console.log(gameImg[index].showId())
     index++;
     }
+    // js 4 exersie 2.3&3 [js_4-exercise_2.3&3]
+
+    gameImg.map((img)=>{
+       let imgDoc = document.getElementById(img.showId())
+       imgDoc.height = 350
+       imgDoc.width = 240
+       console.log(img.showId()+"  "+ imgDoc.height)
+    }
+    )
         </script>
         
 
